@@ -1,1 +1,14 @@
-console.log("your code goes here...");
+function add(n1, n2, showResult, Phrase) {
+    var result = n1 + n2;
+    if (showResult) {
+        console.log(Phrase + result);
+    }
+    else {
+        return result;
+    }
+}
+var number1 = 5;
+var number2 = 2.8;
+var printResult = true;
+var resultPhrase = "Result is: ";
+var result = add(number1, number2, printResult, resultPhrase);
