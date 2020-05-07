@@ -1,42 +1,26 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "MAximilian",
-//   age: 30,
-//   hobbies: ["sports", "cooking"],
-//   role: [2, "author"],
-// };
-
-// person.role.push("adimn");
-// person.role[1] = 10;
-
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role {
-  ADMIN = 5,
-  READ_ONLY = 100,
-  AUTHOR = 200,
-}
-const person = {
-  name: "MAximilian",
-  age: 30,
-  hobbies: ["sports", "cooking"],
-  role: Role.ADMIN,
-};
-let favoriteActivity: any[];
-favoriteActivity = ["sports"];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
+function add(n1: number, n2: number): number {
+  return n1 + n2;
 }
 
-if (person.role === Role.AUTHOR) {
-  console.log("is author");
+function printResult(num: number): void {
+  console.log("Result" + num);
 }
+
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+
+printResult(add(5, 12));
+
+// let someValue: undefined;
+
+let combineValue: (a: number, b: number) => number;
+
+combineValue = add;
+
+console.log(combineValue(8, 8));
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+});
